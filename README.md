@@ -2,7 +2,7 @@
 
 This is the demo app for my tutorial on [Server-side form validation from A to Z with Sails.js](https://blog.devcenter.co/server-side-form-validation-from-a-to-z-with-sails-js-db2755cd2e56).
 
-![Form validation demo image](demo-image)
+![Form validation demo image](https://github.com/nicholaskajoh/sails-form-validation/raw/master/assets/images/demo-image.png "Form validation demo")
 
 ### Requirements
 - Node.js and npm. Here's a link to get node.js/npm: [https://nodejs.org](https://nodejs.org).
@@ -20,5 +20,3 @@ Have issues setting up the project on your computer. Throw a response in the tut
 
 ### See a bug somewhere?
 See any bugs in the app? You can notify me by posting a response in the tutorial or opening an issue in this repo. Better still, you can fork the repo and send a fix through a pull request.
-
-[demo-image]: https://github.com/nicholaskajoh/sails-form-validation/blob/master/assets/images/demo-image.png "Form validation demo"
