@@ -21,4 +21,4 @@ Have issues setting up the project on your computer. Throw a response in the tut
 ### See a bug somewhere?
 See any bugs in the app? You can notify me by posting a response in the tutorial or opening an issue in this repo. Better still, you can fork the repo and send a fix through a pull request.
 
-[demo-image]: assets/images/demo-image.png "Form validation demo"
+[demo-image]: assets/images/demo-image.png?raw=true "Form validation demo"
