@@ -1,0 +1,26 @@
+██████╗ ███████╗██████╗  ██████╗ ██████╗ ████████╗
+██╔══██╗██╔════╝██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝
+██████╔╝█████╗  ██████╔╝██║   ██║██████╔╝   ██║   
+██╔══██╗██╔══╝  ██╔═══╝ ██║   ██║██╔══██╗   ██║   
+██║  ██║███████╗██║     ╚██████╔╝██║  ██║   ██║   
+╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   
+                                                  
+==================================================
+
+This report highlights various issues that may need to be addressed before your app will work with Sails 1.0.
+After implementing these suggestions, some good next steps are:
+* Address the issues in this report, and run the updater again with --reportOnly to regenerate the report.
+  Repeat until there are no more issues!
+* Review the full migration guide at: https://github.com/balderdashy/sails-docs/blob/1.0/upgrading/To1.0.md
+* Attempt to lift and run your app with Sails 1.0.
+* See http://sailsjs.com/support for support options!
+
+
+┌┐ ┬  ┬ ┬┌─┐┌─┐┬─┐┬┌┐┌┌┬┐┌─┐  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
+├┴┐│  │ │├┤ ├─┘├┬┘││││ │ └─┐  │  │ ││││├┤ ││ ┬
+└─┘┴─┘└─┘└─┘┴  ┴└─┴┘└┘ ┴ └─┘  └─┘└─┘┘└┘└  ┴└─┘
+
+In Sails 1.0, the `actions` blueprint routes are turned _off_ by default.
+This is a change from v0.12.x, so if you're relying on Sails to create
+a route for each of your custom controller actions automatically, be sure
+to set `actions` to `true` in your config/blueprints.js file.

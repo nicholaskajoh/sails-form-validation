@@ -2,49 +2,28 @@
   <h2>Product form</h2>
 
   <form method="post" action="">
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+
     <!-- name -->
     <div class="form-group">
-      <% if(errors && !_.isEmpty(errors.name)) { %>
-        <div class="alert alert-danger">
-          <% errors.name.forEach(err => { %>
-            <p><%= err.message %></p>
-          <% }); %>
-        </div>
-      <% } %>
-
       <label>Name</label>
-      <input class="form-control" type="text" name="name" value="<% if(old) { %><%= old.name %><% } %>">
+      <input class="form-control" type="text" name="name" value="<%= old.name %>">
     </div>
     <!-- ./name -->
 
     <!-- price -->
     <div class="form-group">
-      <% if(errors && !_.isEmpty(errors.price)) { %>
-        <div class="alert alert-danger">
-          <% errors.price.forEach(err => { %>
-            <p><%= err.message %></p>
-          <% }); %>
-        </div>
-      <% } %>
-
       <label>Price</label>
-      <input class="form-control" type="number" step="0.01" name="price" value="<% if(old) { %><%= old.price %><% } %>">
+      <input class="form-control" type="number" step="0.01" name="price" value="<%= old.price %>">
     </div>
     <!-- ./price -->
 
     <!-- label -->
     <div class="form-group">
-      <% if(errors && !_.isEmpty(errors.label)) { %>
-        <div class="alert alert-danger">
-          <% errors.label.forEach(err => { %>
-            <p><%= err.message %></p>
-          <% }); %>
-        </div>
-      <% } %>
-
       <label>Label</label>
-      <!-- label would normal be a select box. I used text input for testing purposes. -->
-      <input class="form-control" type="text" name="label" value="<% if(old) { %><%= old.label %><% } %>">
+      <!-- Label would normal be a select box.
+      I used text a input so that the validation functionality can be tested. -->
+      <input class="form-control" type="text" name="label" value="<%= old.label %>">
     </div>
     <!-- ./label -->
 

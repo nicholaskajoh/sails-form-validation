@@ -5,6 +5,8 @@
   "description": "Form validation with Sails.js (demo)",
   "keywords": [],
   "dependencies": {
+    "@sailshq/upgrade": "^1.0.9",
+    "async": "2.1.4",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
@@ -19,11 +21,14 @@
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
+    "lodash": "3.10.1",
     "rc": "1.0.1",
-    "sails": "~0.12.13",
-    "sails-disk": "~0.10.9",
-    "sails-hook-validation": "^0.4.6",
-    "sails-mongo": "^0.12.2",
+    "sails": "^1.0.2",
+    "sails-disk": "^1.0.1",
+    "sails-hook-grunt": "^1.0.8",
+    "sails-hook-orm": "^2.1.0",
+    "sails-hook-sockets": "^1.5.3",
+    "sails-mongo": "^1.0.1",
     "shortid": "^2.2.8"
   },
   "scripts": {

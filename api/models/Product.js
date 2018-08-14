@@ -2,8 +2,13 @@ module.exports = {
   tableName: 'products',
   attributes: {
     // primitive
+    id: {
+      type: 'string',
+      columnName: '_id',
+    },
     ref: {
       type: 'string',
+      required: true,
       unique: true,
     },
     name: {
@@ -11,12 +16,12 @@ module.exports = {
       required: true,
     },
     price:{
-      type: 'float',
+      type: 'number',
       required: true,
     },
     label: {
       type: 'string',
-      in: ["black", "yellow"],
+      isIn: ["black", "yellow"],
     }
     // associations
     // ...
@@ -29,7 +34,7 @@ module.exports = {
       required: "Seriously? Wanna donate this product or what?",
     },
     label: {
-      in: "Only black and yellow labels are allowed bro!",
+      isIn: "Only black and yellow labels are allowed bro!",
     }
   },
 };
