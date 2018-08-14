@@ -7,7 +7,7 @@
   "dependencies": {
     "@sailshq/upgrade": "^1.0.9",
     "async": "2.1.4",
-    "ejs": "2.3.4",
+    "ejs": "^2.6.1",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-coffee": "1.0.0",
@@ -21,7 +21,7 @@
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
-    "lodash": "3.10.1",
+    "lodash": "^4.17.10",
     "rc": "1.0.1",
     "sails": "^1.0.2",
     "sails-disk": "^1.0.1",
