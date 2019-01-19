@@ -46,7 +46,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'get /product/:ref': 'ProductController.show',
-  'get /products/add': 'ProductController.addForm',
-  'post /products/add': 'ProductController.add',
+  'GET /product/:ref': 'ProductController.show',
+  '/products/add': 'ProductController.add',
 };

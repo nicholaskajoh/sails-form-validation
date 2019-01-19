@@ -1,46 +1,37 @@
 shortid = require('shortid');
 
-Product = require('../models/Product');
-
 module.exports = {
-  show: (req, res) => {
-    Product
-      .findOne({ where: {ref: req.param('ref')}})
-      .exec((err, product) => {
-        if(err) console.log(err);
-        return res.view('product', {product});
-      });
+  async show(req, res) {
+    try {
+      const product = await Product.findOne({ ref: req.param('ref') });
+      if (!product) return res.notFound();
+      return res.view('product', { product });
+    } catch(err) {
+      console.log(err);
+    }
   },
-  addForm: (req, res) => {
-    // get errors if any from session
-    var errorsExist = !_.isEmpty(req.session.flash) && !_.isEmpty(req.session.flash.formErrors);
-    var errors = errorsExist ? _.clone(req.session.flash.formErrors) : false;
-    // get old form data if any from session
-    var oldExist = !_.isEmpty(req.session.flash) && !_.isEmpty(req.session.flash.old);
-    var old = oldExist ? _.clone(req.session.flash.old) : false;
-    // clear flash messages session
-    req.session.flash = {};
-    return res.view('add-product-form', {errors, old});
-  },
-  add: (req, res) => {
-    Product
-      .create({
-        ref: shortid.generate(),
-        name: req.body.name,
-        price: parseFloat(req.body.price),
-        label: req.body.label,
-      })
-      .exec((err, product) => {
-        if(err && err.invalidAttributes) {
-          // store errors and old data in session
-          req.session.flash = {
-            formErrors: err.Errors,
-            old: req.body,
-          }
-          return res.redirect('products/add');
-        } else {
-          return res.redirect('product/'+product.ref);
+  async add(req, res) {
+    const data = {
+      errors: {},
+      old: {},
+    };
+    if (req.method === 'POST') {
+      try {
+        const product = await Product.create({
+          ref: shortid.generate(),
+          name: req.body.name,
+          price: parseFloat(req.body.price),
+          label: req.body.label,
+        });
+        return res.redirect(`product/${product.ref}`);
+      } catch(err) {
+        if(err.invalidAttributes) {
+          data.errors = err.Errors;
+          data.old = req.body;
         }
-      });
+      }
+    }
+
+    return res.view('add-product-form', data);
   },
 };

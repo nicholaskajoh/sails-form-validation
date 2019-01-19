@@ -4,7 +4,7 @@
   <form method="post" action="">
     <!-- name -->
     <div class="form-group">
-      <% if(errors && !_.isEmpty(errors.name)) { %>
+      <% if(errors.name) { %>
         <div class="alert alert-danger">
           <% errors.name.forEach(err => { %>
             <p><%= err.message %></p>
@@ -13,13 +13,13 @@
       <% } %>
 
       <label>Name</label>
-      <input class="form-control" type="text" name="name" value="<% if(old) { %><%= old.name %><% } %>">
+      <input class="form-control" type="text" name="name" value="<% if(old.name) { %><%= old.name %><% } %>">
     </div>
     <!-- ./name -->
 
     <!-- price -->
     <div class="form-group">
-      <% if(errors && !_.isEmpty(errors.price)) { %>
+      <% if(errors.price) { %>
         <div class="alert alert-danger">
           <% errors.price.forEach(err => { %>
             <p><%= err.message %></p>
@@ -28,13 +28,13 @@
       <% } %>
 
       <label>Price</label>
-      <input class="form-control" type="number" step="0.01" name="price" value="<% if(old) { %><%= old.price %><% } %>">
+      <input class="form-control" type="number" step="0.01" name="price" value="<% if(old.price) { %><%= old.price %><% } %>">
     </div>
     <!-- ./price -->
 
     <!-- label -->
     <div class="form-group">
-      <% if(errors && !_.isEmpty(errors.label)) { %>
+      <% if(errors.label) { %>
         <div class="alert alert-danger">
           <% errors.label.forEach(err => { %>
             <p><%= err.message %></p>
@@ -44,7 +44,7 @@
 
       <label>Label</label>
       <!-- label would normal be a select box. I used text input for testing purposes. -->
-      <input class="form-control" type="text" name="label" value="<% if(old) { %><%= old.label %><% } %>">
+      <input class="form-control" type="text" name="label" value="<% if(old.label) { %><%= old.label %><% } %>">
     </div>
     <!-- ./label -->
 
